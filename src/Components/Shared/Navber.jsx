@@ -3,11 +3,32 @@ import { SlCallIn } from "react-icons/sl";
 import { FiShoppingCart } from "react-icons/fi";
 import { HiOutlineMenuAlt1 } from "react-icons/hi";
 import Logo from "./Logo";
+import { NavLink } from "react-router-dom";
+import { useEffect, useState } from "react";
 
 const Navber = () => {
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY;
+      setIsScrolled(scrollTop > 0);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <div>
-      <header className=" fixed bg-white  py-2 w-full z-10 ">
+      <header
+        className={`fixed bg-white ${
+          isScrolled ? "shadow-lg" : ""
+        } pt-2 w-full z-10`}
+      >
         <Container>
           <div className=" ">
             {/* lg+ */}
@@ -196,25 +217,21 @@ const Navber = () => {
           <Container>
             <div className="hidden md:flex md:items-center md:ml-auto md:space-x-10">
               <div className="navbar-center hidden md:flex">
-                <ul className="menu menu-horizontal px-1">
-                  <li>
-                    <a>Item 1</a>
+                <ul className="inline-flex ">
+                  <li className="border-r px-10  py-2 hover:text-primary hover:bg-gray-50">
+                    <NavLink to="">Home</NavLink>
                   </li>
-                  <li>
-                    <details>
-                      <summary>Parent</summary>
-                      <ul className="p-2">
-                        <li>
-                          <a>Submenu 1</a>
-                        </li>
-                        <li>
-                          <a>Submenu 2</a>
-                        </li>
-                      </ul>
-                    </details>
+                  <li className="border-r px-10 py-2 hover:text-primary hover:bg-gray-50">
+                    <NavLink to="">Men</NavLink>
                   </li>
-                  <li>
-                    <a>Item 3</a>
+                  <li className="border-r px-10 py-2 hover:text-primary hover:bg-gray-50">
+                    <NavLink to="">Women</NavLink>
+                  </li>
+                  <li className="border-r px-10 py-2 hover:text-primary hover:bg-gray-50">
+                    <NavLink to="">Boy/Girl</NavLink>
+                  </li>
+                  <li className="border-r px-10 py-2 hover:text-primary hover:bg-gray-50">
+                    <NavLink to="">Offer</NavLink>
                   </li>
                 </ul>
               </div>

@@ -11,6 +11,8 @@ export default {
       fontFamily: {
         roboto: ["Roboto", "sans-serif"],
         poppins: ["Poppins", "sans-serif"],
+        hindSiliguri: ["Hind Siliguri", "sans-serif"],
+        notoSansArabic: ["Noto Sans Arabic", "sans-serif"],
       },
     },
   },
