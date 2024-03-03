@@ -18,13 +18,13 @@ export default function Banner() {
         <Swiper
           spaceBetween={30}
           effect={"fade"}
-          // slidesPerView={1}
-          // loop={true}
-          // centeredSlides={true}
-          // autoplay={{
-          //   delay: 3000,
-          //   disableOnInteraction: false,
-          // }}
+          slidesPerView={1}
+          loop={true}
+          centeredSlides={true}
+          autoplay={{
+            delay: 3000,
+            disableOnInteraction: false,
+          }}
           navigation={false}
           pagination={{
             dynamicBullets: true,
