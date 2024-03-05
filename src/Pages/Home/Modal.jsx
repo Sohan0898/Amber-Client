@@ -32,7 +32,7 @@ const Modal = () => {
 
   return (
     <div
-      className={`fixed inset-0 flex items-center justify-center bg-gray-800 bg-opacity-20 ${
+      className={`fixed inset-0 z-10 flex items-center justify-center bg-gray-800 bg-opacity-20 ${
         isOpen ? "" : "hidden"
       }`}
     >
